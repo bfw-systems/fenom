@@ -6,6 +6,6 @@
  * @version 1.0
  */
  
-require_once(path.'configs/bfw-fenom/config.php');
+require_once($rootPath.'configs/bfw-fenom/config.php');
 
 $BFWKernel->fenom = Fenom::factory($pathTemplate, $pathCompiled, $fenomOptions);
