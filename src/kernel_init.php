@@ -8,4 +8,14 @@
  
 require_once($rootPath.'configs/bfw-fenom/config.php');
 
+if($pathTemplate !== '')
+{
+    $pathTemplate = $rootPath.'/'.$pathTemplate;
+}
+
+if($pathCompiled !== '')
+{
+    $pathCompiled = $rootPath.'/'.$pathCompiled;
+}
+
 $BFWKernel->fenom = Fenom::factory($pathTemplate, $pathCompiled, $fenomOptions);
