@@ -17,5 +17,11 @@ if($pathCompiled !== '')
 {
     $pathCompiled = $rootPath.$pathCompiled;
 }
+else
+{
+    //Fenom default value.
+    //With option "disable_cache" at true, this directory is already declared to compiled_path.
+    $pathCompiled = '/tmp';
+}
 
 $BFWKernel->fenom = Fenom::factory($pathTemplate, $pathCompiled, $fenomOptions);
