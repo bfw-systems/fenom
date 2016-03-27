@@ -13,7 +13,7 @@ if($pathTemplate !== '')
     $pathTemplate = $rootPath.$pathTemplate;
 }
 
-if($pathCompiled !== '')
+if(is_string($pathCompiled) && $pathCompiled !== '')
 {
     $pathCompiled = $rootPath.$pathCompiled;
 }
