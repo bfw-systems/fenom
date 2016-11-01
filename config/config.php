@@ -1,31 +1,56 @@
 <?php
 /**
- * Fichier de configuration du module bfw-fenom
+ * Config file for module bfw-fenom
  * @author Vermeulen Maxime <bulton.fr@gmail.com>
  * @package bfw-fenom
- * @version 1.0
+ * @version 2.0
  */
-
-//*** Fenom configs ***
-
-/*
- * Dossier où sont les fichiers template pour fenom par rapport à la racine du projet
- * Exemple : 'view/tpl'
- */
-$pathTemplate = '';
 
 /**
- * Dossier où seront stocker les fichiers compilé par fenom
+ * Default Fenom options
  */
-$pathCompiled = '';
+$fenomOptions = [
+    'auto_reload' => false
+];
 
 /**
- * Options doc : https://github.com/fenom-template/fenom/blob/master/docs/en/configuration.md#template-settings
+ * Override $fenomOptions if debug mode is enabled
  */
-$fenomOptions = array();
+$fenomOptionsDebug = [
+    'auto_reload' => true
+];
 
-if($BFWKernel->getDebug())
-{
-    $fenomOptions['auto_reload'] = true;
+$debugStatus = \BFW\Application::getInstance()->getConfig('debug');
+if ($debugStatus === true) {
+    $fenomOptions = array_merge($fenomOptions, $fenomOptionsDebug);
 }
-//*** Fenom configs *** 
+
+/**
+ * Return config
+ */
+return [
+    /**
+     * @var string pathTemplate : Directory where is template files from root
+     *  project directory.
+     * 
+     * @suggest: '/src/view/templates'
+     */
+    'pathTemplate' => '',
+    
+    /**
+     * @var string pathCompiled : Directory where is save compiled template
+     * files generate by Fenom.
+     * Path should be from root project directory.
+     * 
+     * Fenom default value is /tmp
+     * You can disabled compiled template with option "disable_cache".
+     * 
+     * @suggest: '/src/view/compiled/templates'
+     */
+    'pathCompiled' => '/tmp',
+    
+    /**
+     * @var array fenomOptions : All options passed to Fenom
+     */
+    'fenomOptions' => $fenomOptions
+];
