@@ -1,9 +1,9 @@
 <?php
 
-$config = $module->getConfig();
+$config = $this->getConfig();
 
 $module->fenom = Fenom::factory(
-    $config->getConfig('pathTemplate'),
-    $config->getConfig('pathCompiled'),
-    $config->getConfig('fenomOptions')
+    $config->getValue('pathTemplate'),
+    $config->getValue('pathCompiled'),
+    $config->getValue('fenomOptions')
 );
