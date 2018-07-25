@@ -20,7 +20,11 @@ $fenomOptionsDebug = [
     'auto_reload' => true
 ];
 
-$debugStatus = \BFW\Application::getInstance()->getConfig()->getValue('debug');
+
+$debugStatus = \BFW\Application::getInstance()
+    ->getConfig()
+    ->getValue('debug', 'global.php')
+;
 if ($debugStatus === true) {
     $fenomOptions = array_merge($fenomOptions, $fenomOptionsDebug);
 }
