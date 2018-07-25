@@ -36,11 +36,11 @@ sleep 5
 exitstatus=0
 
 echo '\033[0;33mGet return for index\033[0m'
-wgetreturn=$( wget -qO - http://localhost:8000 )
-wgetexpected="<p>Test Fenom</p>"
+curlreturn=$( curl -s http://localhost:8000 )
+curlexpected="<p>Test Fenom</p>"
 
 echo -n '\033[0;33mCheck return ... \033[0m'
-if [ "$wgetreturn" = "$wgetexpected" ] ;then
+if [ "$curlreturn" = "$curlexpected" ] ;then
     echo '\033[1;32mOK\033[0m'
 else
     echo '\033[1;31m Fail\033[0m'
