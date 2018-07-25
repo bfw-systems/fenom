@@ -1,4 +1,8 @@
 <?php
 
-$tpl = \BFW\Application::getInstance()->getModule('bfw-fenom')->fenom;
+$tpl = \BFW\Application::getInstance()
+    ->getModuleList()
+    ->getModuleForName('bfw-fenom')
+    ->fenom
+;
 $tpl->display('test.html');
