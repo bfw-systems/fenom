@@ -2,7 +2,7 @@
 
 $tpl = \BFW\Application::getInstance()
     ->getModuleList()
-    ->getModuleForName('bfw-fenom')
+    ->getModuleByName('bfw-fenom')
     ->fenom
 ;
 $tpl->display('test.html');
