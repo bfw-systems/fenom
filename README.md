@@ -16,7 +16,7 @@ And to install the module : `./vendor/bin/bfwInstallModules`
 
 __Config :__
 
-All config file for this module will be into `app/config/bfw-api/`. There is one files to configure (manifest.json is for the module update system).
+All config file for this module will be into `app/config/bfw-fenom/`. There is one files to configure (manifest.json is for the module update system).
 
 The file config.php. This file start with two variabled declared (`$fenomOptions` and `$fenomOptionsDebug`). The first variable is options passed to fenom, and the second is an override of the first variable used when the framework is run in debug mode (file `/app/config/bfw/global.php`).
 
