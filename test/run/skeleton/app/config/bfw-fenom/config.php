@@ -39,7 +39,7 @@ return [
      * 
      * @suggest: '/src/view/templates'
      */
-    'pathTemplate' => VIEW_DIR.'templates',
+    'pathTemplate' => SRC_DIR.'view/templates',
     
     /**
      * @var string pathCompiled : Directory where is save compiled template
@@ -51,7 +51,7 @@ return [
      * 
      * @suggest: '/src/view/compiled/templates'
      */
-    'pathCompiled' => VIEW_DIR.'compiled/templates',
+    'pathCompiled' => SRC_DIR.'view/compiled/templates',
     
     /**
      * @var array fenomOptions : All options passed to Fenom

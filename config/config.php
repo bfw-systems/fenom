@@ -36,7 +36,7 @@ return [
      * @var string pathTemplate : Directory where is template files from root
      *  project directory.
      * 
-     * @suggest: VIEW_DIR.'/templates/src',
+     * @suggest: SRC_DIR.'view/templates/src',
      */
     'pathTemplate' => '',
     
@@ -48,7 +48,7 @@ return [
      * Fenom default value is /tmp
      * You can disabled compiled template with option "disable_cache".
      * 
-     * @suggest: VIEW_DIR.'/templates/compiled',
+     * @suggest: SRC_DIR.'view/templates/compiled',
      */
     'pathCompiled' => '/tmp',
     
